@@ -90,22 +90,17 @@ def precargar_datos():
     personas.append(persona3)
 
 def buscar_persona_por_id(id_persona):
-    i = 0
-    while i < len(personas):
-        id_recuperado = personas[i]["id"]
+    persona_encontrada = obtener_prrsona_por_ID(id_persona)
+    if persona_encontrada is None:
+        print("no se encontro a la persona")
+    else:
+        print(f"nombre: {persona_encontrada["nombre"]}")
+        print(f"edad: {persona_encontrada["edad"]}")
+        print(f"estatura: {persona_encontrada["estatura"]}")
+        print(f"estado: {persona_encontrada["estado"]}")
 
-        # Preguntar si id existe
-        if id_persona == id_recuperado:
-            print(f"ID: {personas[i]['id']}")
-            print(f"Nombre: {personas[i]['nombre']}")
-            print(f"Edad: {personas[i]['edad']}")
-            print(f"Estatura: {personas[i]['estatura']}")
-            print(f"Estado: {personas[i]['estado']}")
-
-            for t in personas[i]['telefonos']:
-                print(f"+56 {t}")
-
-        i = i + 1
+        for  t in persona_encontrada["telefonos "]:
+            print(f"+56{"telefono"}")
 
 def obtener_prrsona_por_ID (id_persona)
     for p in personas:
